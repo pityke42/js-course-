@@ -1,0 +1,75 @@
+/*
+Object.assign() //merge 2 objects //merge with an empty object //shallow copy
+
+
+FUNCTION METHODS// FUNCTIONS ARE OBJECTS!!!!!!!!!!!!!!!!!!!!!!!!!!
+function.call()
+function.apply()
+function.bind()
+
+forEach()   is avaliable for MAPS and SETS
+
+
+.find() //only returns an element itself NOT WITH A NEW ARRAY
+
+
+
+
+preventDefault();
+
+.flat();   removes the nested array, gives the full array, flatening the original (nested) array
+.flatMap();   //combined method FLAT+MAP
+
+node list is an array like structure -> iterable
+
+
+
+//Array methods 23
+/To mutate the original array
+_add to original array
+-push();
+-unshift();
+_remove from orgiginal array
+-pop();
+-shift();
+-splice();
+_other
+-reverse();
+-sort();
+-fill();
+/To create a new array
+-map();
+-filter();
+-slice();
+-concat();
+-flat();
+-flatMap();
+/To get an index
+-indexOf();
+-findIndex();
+/Get an array element
+-find();
+/To know if array includes(boolian values)
+-indcludes();
+-some();
+-every();
+//Transform array to a new string 
+-join();
+//Transform an array for a value
+-reduce();
+
+
+++ operator increment a value that returns the previous value
+
+
+
+FETCH download than execute
+
+
+
+///////////////////////////////////////////////////////////////
+DOM
+//For scrolling and revealing things on site --> IntersectionObserver() 189.
+
+function.call() method setting the THIS keyword to the parent method/class
+

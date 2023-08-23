@@ -1,0 +1,1 @@
+dogs.filter(do)

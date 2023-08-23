@@ -1,0 +1,11 @@
+Type Convertion / Coersion
+
+'1991' + 18 --> 199118 (number)
+
+'I am' + 23 + 'years old' --> (string)
+
+'23' - '10' - 3 --> 10 ('-' operator opposite convertion)
+
+'23' + '10' + 3 --> 23103 ('+' operator concatenating)
+
+'23' * '2' --> ('*' operator converting to number)

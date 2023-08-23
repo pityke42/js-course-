@@ -1,0 +1,6 @@
+Reusable piece of code that encapsulates implementation details. Usually a standalone file.
+Isolating components. Modules stored in files, exactly one module per file (scripts are also files).
+
+Modules are imported synchronusly. Imports are hoisted
+
+Top level await (await outside of an async function) is blocking the entire module

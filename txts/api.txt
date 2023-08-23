@@ -1,0 +1,11 @@
+API: (Application Programming Interface) Software that can used by another software, in order to allow 
+applications talk to each other.
+
+Online API: Application running on a server, that receives requests for data, and sends back as response.
+
+
+
+DOM 
+geolocation
+local storage
+openstreetmap

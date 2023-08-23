@@ -1,0 +1,80 @@
+/*
+abstraction is hiding low level details 
+encapsulation keep properies and methods private in the class, these are not accessable from outside of the class, methods can exposed as a publis api
+inheritance child class extends the parent class, properties and methods avaliable to the child class to reuse logic, 
+polymorphism child class can overwrite a method that it inherited from a parent class
+
+prototypal inheritance the prototype contains methods that are accessavle to all objects linked to that prototype
+objects delegate behaviour to the linked prototyp object
+methods are copied from the class to the objects
+
+//CONSTRUCTOR functions called with the NEW keyword:
+NEVER CREATE A METHOD INSIDE OF A CONSTRUCTOR FUNCTION
+//1. New epmty object is created (new {} is created)
+//2. Function is called, THIS keyword will be set this newly created object (function is called, this = {})
+//3. Newly created object is linked to a prototype ({ linked to prototype})
+//4. Object that created in the beggining is automatically returned from the constructor funtion (function automatically returns that epmty object from the beggining), at this point the object no longer needs to be empty
+New operator contains step 3. wich links the new empty object to the prototype, create the __proto__ property
+It sets its value to the prototype property to the function that is being called
+
+object created from a class is called an instance
+
+//PROTOTYPES//Prototypal inheritance-delegation
+Each and every function in js automatically has a prperty called prototype that includes constructor functions
+
+Every object by created constructor function will get access to all the methods and properties that we define on the constructors prototype property
+//.prototypeOfLinkedObjects
+Own properties are only the ones that are declared directly on the object itself, not including the inharited properties
+__proto__ always points to an object prototype
+If a property or a method cannot be found in a certain object js will look  its prototype
+pl:
+const Person = function(firstName, birthYear){
+    //Instance Properies
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+};
+Person.prototype.calcAge = function(){
+    console.log(2037 - this.birthYear);
+};
+Jonas object and prototype basically form a prototype chain
+Person.prototype's prototype is Object.prototype
+__proto__: Person.prototype -> __proto__: Object.prototype -> __proto__: null that is the top of the prototype chain
+prototype chain is similar with scope chain but with prototypes
+if js cannot find a certain property or a method in the certain object it looks up into the next prototype in the prototype chain and tries to find 
+Objetc.prototype has the hasOwnProperty() and run it on the lower objects and the method has not been copied to the lower object simply inharited
+
+//1.Classes are NOT hoisted (function declarations are hoisted)
+//2.Classes are first-class citizes (Can pass them into functions and also return them from functions)
+//3.Body of a class always executed in strict mode
+
+//Setter
+Setter methods needs one parameter
+Call like a property
+//Getter
+Calling getters like proprties
+
+This keyword: whatever object is calling the method will be the this keyword inside of that function
+
+//Object.create
+There are no prototype properties involved, no constructor functions, no NEW operator,
+Manually set a prototype of an object to any other objects
+
+In CLASSES 'EXTENDS' keyword links the prototypes
+super() is the constructor function in the parent class, in the child class always needs to happens first
+     -responsible to create the this keyword in subclass
+
+FIELD - cannot define a field in the constructor, need to define outside the constructor
+//Public Fields --> referencable by this keyword
+//Private Fields --> #(hash symbol) makes the fileds private
+//Public Methods
+//Private Methods
+
+Returning 'THIS' keyword makes the methods chainable
+Static fields/methods only avaliable on tha actual class, use static methods as helper methods for the class
+Constructor method automatically called with the 'new' operator -> creates a new instance (object)
+
+//Getter
+-get a value out of an object by writing a property instead of writing a method
+//Setter
+-define and setting a value instead of calling a method
+-if a setter defined (with property) in the constructor need to create a new property with (underscore) '_'

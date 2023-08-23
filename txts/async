@@ -1,0 +1,30 @@
+Asynchronus code is executed after a task runs in the 'background' finishes
+Asynchronus code is non-blocking
+Execution doesn't wait for an asynchronus task to finish its work
+
+AJAX: (Asynchronus JavaScript And XML) Allows us to communicate with remote web servers in an asynchronus way. With AJAX calls, we can request data from web servers dynamically.
+
+Promise: An object that is used as a placeholder for the future result of an asynchronus operation.
+ A container for an asychronusly delivered value.
+    A container for a future value.
+    Value comes from an AJAX CALL
+    Advantages: No longer need to rely on events and callbaccks passed into async functions to handle async results. Instead of nestinf callbacks, Chaining promises for a sequence of async operations escaping callback hell.
+Promises are time sensityve
+Promise states: 
+    Pending: before the future value is avaliable
+    Async tack: doing its work in the background
+    Settled: Async task has finiched
+        Fullfilled: successful value, usable data
+        Rejected: error durring async task, cannot connect to epi server
+    We are able to handle these different states in code.
+
+then() function returns another promise
+
+Concurrency model: How js handles multiple tasks happening at the same time 
+
+JS no sense of time, everything that is asynchronus does not happen in the engine, runtime manages the async behaviour and the eventloop decides wich code executes next, engine executes whatever code it is given
+
+Microtasks queue has priority over callback queue
+
+
+
