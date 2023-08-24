@@ -4,6 +4,7 @@ import * as model from './model.js';
 import recepieView from './views/recepieView.js';
 import searchView from './views/searchView.js';
 import resultsView from './views/resultsView.js';
+import paginationView from './views/paginationView.js';
 
 
 import 'core-js/stable'; //Polifilling everything
@@ -47,17 +48,27 @@ const controlSearchResults = async function(){
 
     //3. Render results
     // resultsView.render(model.state.search.results);
-    resultsView.render(model.getSearchResultsPage(3));
+    resultsView.render(model.getSearchResultsPage());
+
+    //4. Render initial pagination buttons
+    paginationView.render(model.state.search);
     
   } catch(err){
     console.error(err)
   }
 }
-controlSearchResults();
+const controlPagination = function(goToPage){
+  //1. Render NEW results
+    resultsView.render(model.getSearchResultsPage(goToPage));
+
+    //2. Render NEW pagination buttons
+    paginationView.render(model.state.search);
+}
 
 const init = function(){
   recepieView.addHandlerRender(controlRecipes);
   searchView.addHandlerSearch(controlSearchResults);
+  paginationView.addHandlerClick(controlPagination);
 }
 init();
 
