@@ -1,14 +1,15 @@
 
-import { async } from 'regenerator-runtime';
 import * as model from './model.js';
 import recepieView from './views/recepieView.js';
 import searchView from './views/searchView.js';
 import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
+import bookmarksView from './views/bookmarksView.js';
 
 
 import 'core-js/stable'; //Polifilling everything
 import 'regenerator-runtime/runtime'; //Polifilling async await
+import { async } from 'regenerator-runtime';
 
 // if(module.hot){
 //   module.hot.accept();
@@ -21,18 +22,22 @@ const controlRecipes = async function () {
     if(!id) return;
 
     recepieView.renderSpinner();
-
+    
     //0. Update results view to mark selected search result
     resultsView.update(model.getSearchResultsPage());
 
-    //1.Loading Recipe
-   await model.loadRecipe(id);
-   
-    //2.Rendering Recipe
+    //1. Updating bookmarks view
+    bookmarksView.update(model.state.bookmarks);
+    
+    //2.Loading Recipe
+    await model.loadRecipe(id);
+    
+    //3.Rendering Recipe
     recepieView.render(model.state.recipe);
-
+    
   } catch (err) {
     recepieView.renderError();
+    console.error(err)
   }
 
 };
@@ -79,14 +84,23 @@ const controlServings = function(newServings){
 }
 
 const controlAddBookmark = function(){
-  console.log(model.state.recipe.bookmarked);
+  //1. Add or remove bookmark
   if (!model.state.recipe.bookmarked) model.addBookmark(model.state.recipe);
   else model.deleteBookmark(model.state.recipe.id);
 
+  //2. Update recipeView
   recepieView.update(model.state.recipe);
+
+  //3. Render bookmarks
+  bookmarksView.render(model.state.bookmarks);
+}
+
+const controlBookmarks = function(){
+  bookmarksView.render(model.state.bookmarks)
 }
 
 const init = function(){
+  bookmarksView.addHandlerRender(controlBookmarks);
   recepieView.addHandlerRender(controlRecipes);
   recepieView.addHandlerUpdateServings(controlServings);
   recepieView.addHandlerAddBookmark(controlAddBookmark);
