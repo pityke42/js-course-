@@ -78,10 +78,18 @@ const controlServings = function(newServings){
   recepieView.update(model.state.recipe);
 }
 
+const controlAddBookmark = function(){
+  console.log(model.state.recipe.bookmarked);
+  if (!model.state.recipe.bookmarked) model.addBookmark(model.state.recipe);
+  else model.deleteBookmark(model.state.recipe.id);
+
+  recepieView.update(model.state.recipe);
+}
 
 const init = function(){
   recepieView.addHandlerRender(controlRecipes);
   recepieView.addHandlerUpdateServings(controlServings);
+  recepieView.addHandlerAddBookmark(controlAddBookmark);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   
