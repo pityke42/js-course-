@@ -86,8 +86,10 @@
 
       <div class="search-results">
         <ul class="results">
-          <a href="#5ed6604691c37cdc054bd0d4">Recipe 1</a>
-          <a href="#5ed6604591c37cdc054bca85">Recipe 2</a>
+          <!-- 
+            //Test data, to see something////////////////////////
+            <a href="#5ed6604691c37cdc054bd0d4">Recipe 1</a>
+          <a href="#5ed6604591c37cdc054bca85">Recipe 2</a> -->
           <!-- 
           <li class="preview">
             <a class="preview__link preview__link--active" href="#23456">
@@ -123,7 +125,7 @@
           </button> -->
         </div>
 
-        <p class="copyright">
+        <!-- <p class="copyright">
           &copy; Copyright by
           <a
             class="twitter-link"
@@ -133,7 +135,7 @@
           >. Use for learning or your portfolio. Don't use to teach. Don't claim
           as your own.
         </p>
-      </div>
+      </div> -->
 
       <div class="recipe">
         <div class="message">
@@ -265,24 +267,24 @@
         <div class="upload__column">
           <h3 class="upload__heading">Recipe data</h3>
           <label>Title</label>
-          <input value="TEST23" required name="title" type="text" />
+          <input value="TEST" required name="title" type="text" />
           <label>URL</label>
-          <input value="TEST23" required name="sourceUrl" type="text" />
+          <input value="TEST" required name="sourceUrl" type="text" />
           <label>Image URL</label>
-          <input value="TEST23" required name="image" type="text" />
+          <input value="TEST" required name="image" type="text" />
           <label>Publisher</label>
-          <input value="TEST23" required name="publisher" type="text" />
+          <input value="TEST" required name="publisher" type="text" />
           <label>Prep time</label>
-          <input value="23" required name="cookingTime" type="number" />
+          <input value="TEST" required name="cookingTime" type="number" />
           <label>Servings</label>
-          <input value="23" required name="servings" type="number" />
+          <input value="TEST" required name="servings" type="number" />
         </div>
 
         <div class="upload__column">
           <h3 class="upload__heading">Ingredients</h3>
           <label>Ingredient 1</label>
           <input
-            value="0.5,kg,Rice"
+            value="0.5,kg,Rice -> Quantity, Unit, Description"
             type="text"
             required
             name="ingredient-1"
@@ -290,14 +292,14 @@
           />
           <label>Ingredient 2</label>
           <input
-            value="1,,Avocado"
+            value="Quantity, Unit, Description"
             type="text"
             name="ingredient-2"
             placeholder="Format: 'Quantity,Unit,Description'"
           />
           <label>Ingredient 3</label>
           <input
-            value=",,salt"
+            value="Quantity, Unit, Description"
             type="text"
             name="ingredient-3"
             placeholder="Format: 'Quantity,Unit,Description'"
