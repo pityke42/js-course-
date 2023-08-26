@@ -3,6 +3,16 @@ import icons from 'url:../../img/icons.svg';
 export default class View {
   _data;
 
+
+  /**
+   * Render the recieved object to the DOM
+   * @param {Object | Object[]} data The data to be rendered (e.g. recipe)
+   * @param {boolean} [render=true] If false, create markup string instead of rendering to the DOM
+   * @return {undefined | string} A markup string is returned if render=false
+   * @this {Object} View instance
+   * @author Balla Istvan
+   * @todo Finish implementation
+   */
   render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))
     return this.renderError();
@@ -15,6 +25,7 @@ export default class View {
     this._clear();
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
+
   /////////////////////////////////////advanced///////////////////////////////////////////////////////////////
   update(data) {
     this._data = data;
@@ -47,6 +58,7 @@ export default class View {
     });
   }
   //////////////////////////////////////////////////////////////////////////////////////////////////
+
   _clear() {
     this._parentElement.innerHTML = '';
   }
